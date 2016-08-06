@@ -1,0 +1,17 @@
+/* Padding top pour la barre de menu*/
+body { 
+	padding-top: 80px;
+}
+
+/*
+Modification pour bootstrap
+*/
+/* Ajout de row pour aérer la page*/
+.quoma-interligne{
+	min-height: 20px;
+}
+
+/************************
+Modification de la navbar
+************************/
+

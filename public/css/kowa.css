@@ -1,0 +1,121 @@
+/*
+        CSS sur la base du site internet de Kawasaki
+
+les couleurs utilisées sont :
+----- navbar
+background: #000000;
+color : #FFFFFF;
+
+----- navbar button
+background : #262626;
+color : #FFFFFF;
+
+----- navbar button hover
+background : #262626;
+color : #69BE28;
+
+----- drop down menu
+background: #FFFFFF;
+color : #000000;
+
+----- Input
+background: #2e2e2e;
+border: 1px solid #737373;
+color: #fff;
+
+----- Font
+@import 'https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|Scada:700i';
+principale: font-family: 'PT Sans Narrow', sans-serif;
+button: font-family: 'Scada', sans-serif;
+
+
+*/
+
+@import 'https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|Scada:700i';
+
+
+/* Padding top pour la barre de menu*/
+body { 
+	/*padding-top: 80px;*/
+  margin-top: 60px;
+	background: url('image/bg-body-kowa.png') repeat;
+}
+
+/*
+Modification pour bootstrap
+*/
+/* Modification du back ground du container*/
+.container{
+ /* background: url(image/bg-container-kowa.gif);*/
+}
+
+.quoma-padding-top{
+  padding-top: 20px;
+}
+/* Ajout de row pour aérer la page*/
+.quoma-interligne{
+	min-height: 20px;
+}
+
+/************************
+Modification de la navbar
+************************/
+
+/* navbar-default*/
+.navbar-default{
+	background: #000000;
+	border: none;
+}
+
+/* navbar-brand*/
+.navbar-default .navbar-brand{
+	color: #FFFFFF;
+}
+.navbar-default .navbar-brand:hover{
+	color: #69BE28;
+}
+
+/* navbar-nav*/
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #69BE28;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #69BE28;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+
+
+/* param de dropdown-menu
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #E5E5E5;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+	color: #20BD18;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #20BD18;
+    background-color: #transparent;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}*/
