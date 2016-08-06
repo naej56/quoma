@@ -5,6 +5,8 @@ App::load();
 
 if(isset($_GET['pwd'])){
 	$pwd = $_GET['pwd'];
+} else {
+	header('Location: http://localhost/quoma/public/index.php?pwd=home');
 }
 
 ob_start();
