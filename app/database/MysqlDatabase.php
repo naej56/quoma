@@ -10,7 +10,7 @@ class MysqlDatabase extends Database{
 	private $db_host;
 	private $db;
 
-	public function __contruct($db_name = 'quoma', $db_user = 'quoma', $db_pwd = 'quoma', $db_host = 'localhost'){
+	public function __contruct($db_name, $db_user, $db_pwd, $db_host){
 		$this->db_name = $db_name;
 		$this->db_user = $db_user;
 		$this->db_pwd = $db_pwd;
