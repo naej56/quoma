@@ -1,7 +1,7 @@
 <?php 
 namespace app\database;
 use app\database\Database;
-
+use \PDO;
 
 class MysqlDatabase extends Database{
 	private $db_name;
@@ -10,7 +10,7 @@ class MysqlDatabase extends Database{
 	private $db_host;
 	private $db;
 
-	public function __contruct($db_name, $db_user, $db_pwd, $db_host){
+	public function __construct($db_name, $db_user, $db_pwd, $db_host){
 		$this->db_name = $db_name;
 		$this->db_user = $db_user;
 		$this->db_pwd = $db_pwd;
@@ -19,7 +19,7 @@ class MysqlDatabase extends Database{
 
 	private function getDb(){
 		if ($this->db === null){
-			$db = new PDO('mysql:dbname=offinote;host=localhost', 'offinote', 'offinote');
+			$db = new PDO('mysql:dbname=' . $this->db_name . ';host=' .$this->db_host, $this->db_user, $this->db_pwd);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->db = $db;	
 		}
@@ -41,12 +41,12 @@ class MysqlDatabase extends Database{
 		return $data;
 	}
 
-	public function prepare($rqte, $attribues, $class_name, $one = false){
+	public function prepare($rqte, $attribues, $className, $one = false){
 		$requete = $this->getDb()->prepare($rqte);
 		$requete->execute($attribues);
-		$requete->setFetchMode(PDO::FETCH_CLASS, $class_name);
+		$requete->setFetchMode(PDO::FETCH_CLASS, $className);
 		if($one){
-			$data = $requete->fetch();	
+			$data = $requete->fetch();
 		} else {
 			$data = $requete->fetchAll();	
 		}

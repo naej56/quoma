@@ -1,5 +1,6 @@
 <?php 
 namespace app\auth;
+use App;
 use app\database\MysqlDatabase;
 
 class Auth {
@@ -11,7 +12,7 @@ class Auth {
 	}
 
 	public function login($username, $password){
-		$user = MysqlDatabase->query('SELECT * FROM user WHERE (login = :username OR email = :username)', ['username' => $username]);
+		$user = App::getInstance()->getTable('user')->query('SELECT * FROM t_user WHERE (login = :username OR mail = :username)', ['username' => $username], true);
 		if($password === $user->password){
 			$this->connect($user);
 			return $user;
