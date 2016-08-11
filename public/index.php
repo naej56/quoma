@@ -1,22 +1,18 @@
 <?php 
+use app\auth\Session;
 define('ROOT', dirname(__DIR__));
 require ROOT . '/app/App.php';
 App::load();
 
-/*
-Test page login
-
-if(!isset($_SESSION['auth'])){
-	$pwd = 'login';
-}*/
-
+Session::getInstance();
 if(isset($_GET['pwd'])){
 	$pwd = $_GET['pwd'];
 } else {
 	header('Location: http://localhost/quoma/public/index.php?pwd=home');
 }
-
-if(!\app\Auth::isAuth()){
+// Gestion du login 
+use app\auth\Auth;
+if(!Auth::isAuth()){
 	$pwd = 'login';
 }
 

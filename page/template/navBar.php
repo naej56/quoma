@@ -1,5 +1,5 @@
 <?php 
-use app\Auth;
+use app\auth\Auth;
 
  ?>
 
@@ -9,9 +9,7 @@ use app\Auth;
 					<a class="navbar-brand" href="index.php?pwd=home"><strong><i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>  Quoma</strong></a>
 				</div>
 				<div class="collapse navbar-collapse">
-					<?php 
-					if (Auth::isAuth()){
-					 ?>
+					<?php if (Auth::isAuth()): ?>
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -64,15 +62,13 @@ use app\Auth;
 							</ul>
 						</li>
 					</ul>
-					<?php } ?>
+					<?php endif; ?>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-home fa-2x" aria-hidden="true"></i>
 							</a>
-							<?php 
-							if (Auth::isAuth()){
-							 ?>
+							<?php if (Auth::isAuth()): ?>
 							<ul class="dropdown-menu">
 								<li><a href="#"><strong><i class="fa fa-child fa-w" aria-hidden="true"></i> Mon compte</strong></a></li>
 								<li role="separator" class="divider"></li>
@@ -80,11 +76,11 @@ use app\Auth;
 								<li role="separator" class="divider"></li>
 								<li><a href="#"><i class="fa fa-sign-out fa-w" aria-hidden="true"></i> Me déconnecter</a></li>
 							</ul>
-							<?php } else { ?>
+							<?php else: ?>
 							<ul class="dropdown-menu">
 								<li><a href="#"><strong><i class="fa fa-at fa-w fa-spin" aria-hidden="true"></i> Contacter l'administrateur</strong></a></li>
 							</ul>
-							<?php } ?>
+							<?php endif; ?>
 						</li>
 					</ul>
 				</div>

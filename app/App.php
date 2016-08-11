@@ -1,11 +1,12 @@
 <?php 
 use app\database\MysqlDatabase;
+use app\auth\Auth;
+use app\auth\Session;
 
 
 class App{
 
 	public static function load(){
-		session_start();
 		require ROOT . '/app/Autoloader.php';
 		app\Autoloader::register();
 	}
@@ -26,6 +27,16 @@ class App{
 		}
 		return $this->db_instance;
 	}
+
+	static function getAuth(){
+		return new Auth(Session::getInstance());
+	}
+
+	static function redirect($page){
+		header("Location: $page");
+	}
+
+
 
 }
 
