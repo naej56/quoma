@@ -16,7 +16,7 @@ if(isset($_GET['pwd'])){
 	header('Location: http://localhost/quoma/public/index.php?pwd=home');
 }
 
-if(!isset($_SESSION['auth'])){
+if(!\app\Auth::isAuth()){
 	$pwd = 'login';
 }
 

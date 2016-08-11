@@ -1,40 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="quotation manager">
-		<meta name="author" content="Naej">
-		<link rel="icon" href="../../favicon.ico">
+<?php 
+use app\Auth;
 
-		<!-- jQuery -->
-		<script src="lib/jquery/jquery.min.js"></script>
-		<!-- Bootstrap -->
-		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-		<!-- FontAwesome -->
-		<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<!-- Bootstrap custom 
-		<link href="css/bootstrap-kowa.css" rel="stylesheet"> -->
-		<!-- quoma -->
-		<link href="css/quoma.css" rel="stylesheet">
-		<!-- kowa 
-		<link href="css/kowa.css" rel="stylesheet">  -->
+ ?>
 
-		<title>Quoma</title>
-
-	</head>
-
-	<body>
-	<?php include_once 'navBar.php'; ?>
-		<!-- <nav class="navbar navbar-default navbar-fixed-top">
+ <nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="index.php?pwd=home"><strong><i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>  Quoma</strong></a>
 				</div>
 				<div class="collapse navbar-collapse">
+					<?php 
+					if (Auth::isAuth()){
+					 ?>
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -87,11 +64,15 @@
 							</ul>
 						</li>
 					</ul>
+					<?php } ?>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-home fa-2x" aria-hidden="true"></i>
 							</a>
+							<?php 
+							if (Auth::isAuth()){
+							 ?>
 							<ul class="dropdown-menu">
 								<li><a href="#"><strong><i class="fa fa-child fa-w" aria-hidden="true"></i> Mon compte</strong></a></li>
 								<li role="separator" class="divider"></li>
@@ -99,14 +80,13 @@
 								<li role="separator" class="divider"></li>
 								<li><a href="#"><i class="fa fa-sign-out fa-w" aria-hidden="true"></i> Me déconnecter</a></li>
 							</ul>
+							<?php } else { ?>
+							<ul class="dropdown-menu">
+								<li><a href="#"><strong><i class="fa fa-at fa-w fa-spin" aria-hidden="true"></i> Contacter l'administrateur</strong></a></li>
+							</ul>
+							<?php } ?>
 						</li>
 					</ul>
 				</div>
 			</div>
-		</nav> -->
-
-		<div class="container">
-			<?= $content; ?>
-		</div><!-- /.container -->
-	</body>
-</html>
+		</nav>
