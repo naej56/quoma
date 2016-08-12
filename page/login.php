@@ -4,12 +4,25 @@ $auth = App::getAuth();
 
 Session::getInstance();
 
-if(!empty($_POST['login']) && !empty($_POST['password'])){
-	$user = $auth->login($_POST['login'], $_POST['password']);
-	$session = Session::getInstance();
-	if($user){
-		$session->setFalsh('success', "Bienvenu $user->first_name !");
-		App::redirect('index.php?pwd=home');
+if(isset($_GET['action'])){
+	if($_GET['action'] === 'login'){
+		if(!empty($_POST['login']) && !empty($_POST['password'])){
+			$user = $auth->login($_POST['login'], $_POST['password']);
+			$session = Session::getInstance();
+			var_dump($_SESSION['auth']);
+			if($user){
+				var_dump($_SESSION['auth']);
+				$session->setFalsh('success', "Bienvenue !");
+				App::redirect('index.php?pwd=home');
+			} else {
+				$session->setFalsh('danger', "Utilisateur ou mot de passe incorrect.");
+				var_dump($_SESSION['flash']);
+			}
+		}
+	} elseif($_GET['action'] === 'logout'){
+		$session = Session::getInstance();
+		$session->delete('auth');
+		App::redirect('index.php?pwd=login');
 	}
 }
 
@@ -17,7 +30,7 @@ if(!empty($_POST['login']) && !empty($_POST['password'])){
 
 <div class="row quoma-padding-top">
 	<div class="col-md-6 col-md-offset-3">
-		<form action="" method="POST" class="form-signin">
+		<form action="index.php?action=login" method="POST" class="form-signin">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="form-group">
 					<label for="inputEmail" class="sr-only">Utilisateur ou adresse mail</label>

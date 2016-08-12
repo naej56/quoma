@@ -74,7 +74,7 @@ use app\auth\Auth;
 								<li role="separator" class="divider"></li>
 								<li><a href="#"><i class="fa fa-gear fa-w fa-spin" aria-hidden="true"></i>   Paramètres</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#"><i class="fa fa-sign-out fa-w" aria-hidden="true"></i> Me déconnecter</a></li>
+								<li><a href="index.php?pwd=login&action=logout"><i class="fa fa-sign-out fa-w" aria-hidden="true"></i> Me déconnecter</a></li>
 							</ul>
 							<?php else: ?>
 							<ul class="dropdown-menu">

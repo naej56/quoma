@@ -45,10 +45,23 @@
 	<body>
 		<!-- NavBar -->
 		<?php include_once 'navBar.php'; ?>
-		<!-- /NavBar -->
 
+		<!-- Contener -->
 		<div class="container">
+
+			<!-- Affichage des messages flash -->
+			<?php use app\auth\Session; ?>
+			<?php if(Session::getInstance()->hasFlash()): ?>
+	   		    <?php foreach(Session::getInstance()->getFlash() as $type => $message): ?>
+	   		        <div class="alert alert-<?= $type; ?>">
+	   		            <?= $message; ?>
+	   		        </div>
+	   		    <?php endforeach; ?>
+	   		<?php endif; ?>
+	   		<?php var_dump($_SESSION['flash']); ?>
+
+	   		<!-- Affichage du corps de la page -->
 			<?= $content; ?>
-		</div><!-- /.container -->
+		</div>
 	</body>
 </html>

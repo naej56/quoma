@@ -8,6 +8,7 @@ class Session {
 	static function getInstance(){
 		if(!self::$instance){
 			self::$instance = new Session();
+			$_SESSION['init'] = date('d/m/Y H:i:s');
 		}
 		return self::$instance;
 	}

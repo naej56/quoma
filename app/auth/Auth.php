@@ -13,14 +13,15 @@ class Auth {
 
 	public function login($username, $password){
 		$user = App::getInstance()->getTable('user')->query('SELECT * FROM t_user WHERE (login = :username OR mail = :username)', ['username' => $username], true);
-		if($password === $user->password){
-			$this->connect($user);
-			return $user;
-		} else {
-			return false;
+		if($user){	
+			if($password === $user->password){
+				$this->connect($user);
+				return $user;
+			}
 		}
-
+		return false;
 	}
+
 
 	public function connect($user){
 		$this->session->write('auth', $user);
