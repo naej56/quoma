@@ -8,7 +8,7 @@ Session::getInstance();
 if(isset($_GET['pwd'])){
 	$pwd = $_GET['pwd'];
 } else {
-	header('Location: http://localhost/quoma/public/index.php?pwd=home');
+	header('Location: index.php?pwd=home');
 }
 // Gestion du login 
 use app\auth\Auth;
