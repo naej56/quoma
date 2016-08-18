@@ -9,19 +9,17 @@ if(isset($_GET['action'])){
 		if(!empty($_POST['login']) && !empty($_POST['password'])){
 			$user = $auth->login($_POST['login'], $_POST['password']);
 			$session = Session::getInstance();
-			var_dump($_SESSION['auth']);
 			if($user){
-				var_dump($_SESSION['auth']);
-				$session->setFalsh('success', "Bienvenue !");
+				$session->setFlash('success', 'Bienvenue !');
 				App::redirect('index.php?pwd=home');
 			} else {
-				$session->setFalsh('danger', "Utilisateur ou mot de passe incorrect.");
-				var_dump($_SESSION['flash']);
+				$session->setFlash('danger', 'Utilisateur ou mot de passe incorrect.');
 			}
 		}
 	} elseif($_GET['action'] === 'logout'){
 		$session = Session::getInstance();
 		$session->delete('auth');
+		$session->setFlash('success', 'Vous êtes bien déconnecté.');
 		App::redirect('index.php?pwd=login');
 	}
 }

@@ -58,7 +58,7 @@
 	   		        </div>
 	   		    <?php endforeach; ?>
 	   		<?php endif; ?>
-	   		<?php var_dump($_SESSION['flash']); ?>
+	   		
 
 	   		<!-- Affichage du corps de la page -->
 			<?= $content; ?>
