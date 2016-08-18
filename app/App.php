@@ -11,7 +11,7 @@ class App{
 	private $db_instance;
 
 	/**********************************
-	Focntion relative à l'application'
+	Focntion relative à l'application
 	**********************************/
 	
 	public static function load(){
