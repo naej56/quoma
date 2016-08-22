@@ -1,5 +1,5 @@
 <?php 
-namespace app\class;
+namespace app\classes;
 
 class Str{
 

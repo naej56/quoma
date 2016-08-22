@@ -72,6 +72,8 @@ use app\auth\Auth;
 							<ul class="dropdown-menu">
 								<li><a href="#"><strong><i class="fa fa-child fa-w" aria-hidden="true"></i> Mon compte</strong></a></li>
 								<li role="separator" class="divider"></li>
+								<li><a href="index.php?pwd=ubugtrack" target="_blank"><i class="fa fa-question-circle fa-w" aria-hidden="true"></i> Signaler un problème</a></li>
+								<li role="separator" class="divider"></li>
 								<li><a href="#"><i class="fa fa-gear fa-w fa-spin" aria-hidden="true"></i>   Paramètres</a></li>
 								<li role="separator" class="divider"></li>
 								<li><a href="index.php?pwd=login&action=logout"><i class="fa fa-sign-out fa-w" aria-hidden="true"></i> Me déconnecter</a></li>

@@ -7,6 +7,9 @@ App::load();
 Session::getInstance();
 if(isset($_GET['pwd'])){
 	$pwd = $_GET['pwd'];
+	if(isset($_GET['action'])){
+		$action = $_GET['action'];
+	}
 } else {
 	header('Location: index.php?pwd=home');
 }
@@ -25,6 +28,8 @@ if ($pwd === 'home'){
 	require ROOT . '/page/quotation/QuotationCreation.php';
 } elseif ($pwd === 'login'){
 	require ROOT . '/page/login.php';
+} elseif ($pwd === 'ubugtrack'){
+	require ROOT . '/page/ubugtrack/Ubugtrack.php';
 }
 
 $content = ob_get_clean();

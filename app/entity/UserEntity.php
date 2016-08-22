@@ -13,11 +13,6 @@ class UserEntity  extends Entity{
 	protected $login;
 	protected $password;
 
-	/*public function __construct(){
-		var_dump($this);
-		var_dump($this->password);
-	}*/
-
 	/*
 	Getter
 	 */
