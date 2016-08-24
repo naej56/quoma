@@ -31,12 +31,9 @@
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 		<!-- FontAwesome -->
 		<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<!-- Bootstrap custom 
-		<link href="css/bootstrap-kowa.css" rel="stylesheet"> -->
 		<!-- quoma -->
 		<link href="css/quoma.css" rel="stylesheet">
-		<!-- kowa   
-		<link href="css/bootstarp-black-and-green.min.css" rel="stylesheet"> -->
+		<script src="js/quoma.js"></script>
 
 		<title>Quoma</title>
 
