@@ -31,7 +31,6 @@ if(isset($_GET['action'])){
 
 ?>
 
-
 <div class="row quoma-padding-top">
 	<div class="col-md-6 col-md-offset-3">
 		<form action="index.php?pwd=ubugtrack&action=send" method="POST" class="form-signin">
