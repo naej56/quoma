@@ -6,9 +6,17 @@ use app\auth\Auth;
  <nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
+					<!-- test responsive navbar -->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- test responsive navbar -->
 					<a class="navbar-brand" href="index.php?pwd=home"><strong><i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>  Quoma</strong></a>
 				</div>
-				<div class="collapse navbar-collapse">
+				<div id="navbar" class="collapse navbar-collapse">
 					<?php if (Auth::isAuth()): ?>
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
