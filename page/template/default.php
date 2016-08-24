@@ -35,8 +35,8 @@
 		<link href="css/bootstrap-kowa.css" rel="stylesheet"> -->
 		<!-- quoma -->
 		<link href="css/quoma.css" rel="stylesheet">
-		<!-- kowa 
-		<link href="css/kowa.css" rel="stylesheet">  -->
+		<!-- kowa   
+		<link href="css/bootstarp-black-and-green.min.css" rel="stylesheet"> -->
 
 		<title>Quoma</title>
 
